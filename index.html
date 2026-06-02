@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSphere</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            background:#F8FAFC;
+            color:#1E293B;
+        }
+
+        /* Navbar */
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:18px 8%;
+            background:white;
+            box-shadow:0 2px 10px rgba(0,0,0,0.08);
+            position:sticky;
+            top:0;
+            z-index:100;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:700;
+            color:#2563EB;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:25px;
+            list-style:none;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:#1E293B;
+            font-weight:500;
+        }
+
+        .cart{
+            background:#2563EB;
+            color:white;
+            padding:10px 18px;
+            border-radius:25px;
+            font-weight:600;
+        }
+
+        /* Hero */
+
+        .hero{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:80px 8%;
+            min-height:80vh;
+        }
+
+        .hero-text{
+            max-width:550px;
+        }
+
+        .hero-text h1{
+            font-size:55px;
+            margin-bottom:20px;
+        }
+
+        .hero-text p{
+            color:#64748B;
+            margin-bottom:30px;
+            line-height:1.7;
+        }
+
+        .btn{
+            background:#2563EB;
+            color:white;
+            padding:14px 28px;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#1D4ED8;
+        }
+
+        .hero img{
+            width:500px;
+            max-width:100%;
+        }
+
+        /* Products */
+
+        .products{
+            padding:60px 8%;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:40px;
+            font-size:36px;
+        }
+
+        .product-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:white;
+            border-radius:18px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+        }
+
+        .card img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:18px;
+        }
+
+        .card-content h3{
+            margin-bottom:10px;
+        }
+
+        .price{
+            color:#F59E0B;
+            font-size:20px;
+            font-weight:700;
+            margin-bottom:15px;
+        }
+
+        .add-btn{
+            width:100%;
+            padding:12px;
+            border:none;
+            background:#2563EB;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:600;
+        }
+
+        .add-btn:hover{
+            background:#1D4ED8;
+        }
+
+        /* Footer */
+
+        footer{
+            background:#0F172A;
+            color:white;
+            text-align:center;
+            padding:30px;
+            margin-top:50px;
+        }
+
+        @media(max-width:900px){
+            .hero{
+                flex-direction:column;
+                text-align:center;
+                gap:40px;
+            }
+
+            .hero-text h1{
+                font-size:42px;
+            }
+
+            .nav-links{
+                display:none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">ShopSphere</div>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="cart">
+            🛒 Cart: <span id="cartCount">0</span>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Discover Premium Products</h1>
+            <p>
+                Shop the latest gadgets, fashion, and lifestyle products
+                with secure payments and fast delivery.
+            </p>
+
+            <button class="btn">Shop Now</button>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900"
+             alt="Product">
+    </section>
+
+    <!-- Products -->
+
+    <section class="products">
+        <h2 class="section-title">Featured Products</h2>
+
+        <div class="product-grid">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800">
+                <div class="card-content">
+                    <h3>Running Shoes</h3>
+                    <div class="price">$89</div>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800">
+                <div class="card-content">
+                    <h3>Wireless Headphones</h3>
+                    <div class="price">$129</div>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
+                <div class="card-content">
+                    <h3>Smartphone</h3>
+                    <div class="price">$699</div>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800">
+                <div class="card-content">
+                    <h3>DSLR Camera</h3>
+                    <div class="price">$999</div>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        © 2026 ShopSphere. All Rights Reserved.
+    </footer>
+
+    <script>
+        let count = 0;
+
+        const buttons = document.querySelectorAll(".add-btn");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                count++;
+                document.getElementById("cartCount").textContent = count;
+            });
+        });
+    </script>
+
+</body>
+</html>
